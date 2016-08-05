@@ -1,0 +1,28 @@
+{
+  "name": "drakkar-parser",
+  "version": "1.0.0",
+  "description": "a parser to get images out of drakkarzones data",
+  "main": "extract.js",
+  "dependencies": {
+    "fs-extra": "^0.30.0",
+    "lodash": "^4.14.1",
+    "pngjs": "^3.0.0",
+    "file-type": "^3.8.0",
+    "node-png": "^0.4.3",
+    "pngjs2": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seiyria/drakkar-parser.git"
+  },
+  "author": "Kyle Kemp <kyle@seiyria.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seiyria/drakkar-parser/issues"
+  },
+  "homepage": "https://github.com/seiyria/drakkar-parser#readme"
+}
