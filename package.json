@@ -6,10 +6,7 @@
   "dependencies": {
     "fs-extra": "^0.30.0",
     "lodash": "^4.14.1",
-    "pngjs": "^3.0.0",
-    "file-type": "^3.8.0",
-    "node-png": "^0.4.3",
-    "pngjs2": "^2.0.0"
+    "pngjs": "^3.0.0"
   },
   "devDependencies": {},
   "scripts": {
