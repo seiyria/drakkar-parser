@@ -251,3 +251,8 @@ var drak24 = () => {
 drak24();
 
 console.log('done');
+
+/*
+ImageMagick convert background to transparent:
+for file in *.png; do convert "${file}" -transparent '#010101' "transparent/${file}"; done
+*/
