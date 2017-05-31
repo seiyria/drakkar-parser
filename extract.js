@@ -76,15 +76,36 @@ var parseData = (i, sectionId, type = 'drak24', hasHeader = true, forceWidth = 0
   var png = new PNG({
     width: imageWidth,
     height: imageHeight,
-    bgColor: { red: 0x00, green: 0x00, blue: 0x00 },
-    inputHasAlpha: false
+    // bgColor: { red: 0x00, green: 0x00, blue: 0x00 },
+    inputHasAlpha: true
   });
 
+  png.data[0] = 0;
+  png.data[1] = 0;
+  png.data[2] = 0;
+  png.data[3] = 0;
+
+  let numNodes = 1;
+
   // write the image data. it's not rgb, it's grb
-  for(var j = 0; j < itemData.length; j+=3) {
-    png.data[j  ] = itemData[j+2];
-    png.data[j+1] = itemData[j+1];
-    png.data[j+2] = itemData[j];
+  for(var j = 3; j < itemData.length; j+=3) {
+    const pos = (numNodes++)*4;
+
+    const g = itemData[j+2];
+    const r = itemData[j+1];
+    const b = itemData[j  ];
+
+    if(g === 1 && r === 1 && b === 1) {
+      png.data[pos] = png.data[pos+1] = png.data[pos+2] = png.data[pos+3] = 0;
+
+    } else {
+      png.data[pos  ] = g;
+      png.data[pos+1] = r;
+      png.data[pos+2] = b;
+      png.data[pos+3] = 255;
+
+    }
+
   }
 
   totalImages++;
