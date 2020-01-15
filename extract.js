@@ -27,7 +27,8 @@ var getOffsetFromHeader = (header, type = 'drak24') => {
 };
 
 var headerOffsetIntoNdx = (index) => {
-  return 0x708 + 0x108 + index * 0xE0C;
+  // old: 2015 and earlier (pre-IR) return 0x708 + 0x108 + index * 0xE0C;
+  return 0xF18 + index * 0x1c1c;
 };
 
 // get every index of data at an offset from the ndx
